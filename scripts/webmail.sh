@@ -13,10 +13,10 @@ wget -nc -P externals http://ftp.debian.org/debian/pool/main/r/roundcube/{roundc
 DEBIAN_FRONTEND=noninteractive dpkg -Gi externals/{roundcube,roundcube-core,roundcube-sqlite3,roundcube-plugins}_$pkg_ver.deb
 
 # Buuuut.... the .deb is missing things?
-wget -nc -P externals http://downloads.sourceforge.net/project/roundcubemail/roundcubemail/0.9.3/roundcubemail-0.9.3.tar.gz
-tar -xzf externals/roundcubemail-0.9.3.tar.gz
-if [ ! -d /usr/share/roundcube/SQL ]; then mv roundcubemail-0.9.3/SQL/ /usr/share/roundcube/; fi
-rm -rf roundcubemail-0.9.3
+wget -nc -P externals http://downloads.sourceforge.net/project/roundcubemail/roundcubemail/0.9.5/roundcubemail-0.9.5.tar.gz
+tar -xzf externals/roundcubemail-0.9.5.tar.gz
+if [ ! -d /usr/share/roundcube/SQL ]; then mv roundcubemail-0.9.5/SQL/ /usr/share/roundcube/; fi
+rm -rf roundcubemail-0.9.5
 
 # Settings
 tools/editconf.py /etc/roundcube/main.inc.php \
